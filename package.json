@@ -1,0 +1,34 @@
+{
+  "name": "advarr",
+  "version": "0.0.0",
+  "description": "Advanced Array utility functions. Extra arguments for map and forEach including first, last, brk, odd, even, penultimate, and more!",
+  "main": "advarr.js",
+  "files": [
+    "advarr.js"
+  ],
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielJDufour/advarr.git"
+  },
+  "keywords": [
+    "array",
+    "each",
+    "for",
+    "foreach",
+    "iterate",
+    "iterable",
+    "map"
+  ],
+  "author": "Daniel J. Dufour",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/DanielJDufour/advarr/issues"
+  },
+  "homepage": "https://github.com/DanielJDufour/advarr#readme",
+  "devDependencies": {
+    "flug": "^0.0.0"
+  }
+}
