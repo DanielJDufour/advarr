@@ -1,6 +1,6 @@
 {
   "name": "advarr",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Advanced Array utility functions. Extra arguments for map and forEach including first, last, brk, odd, even, penultimate, and more!",
   "main": "advarr.js",
   "files": [
