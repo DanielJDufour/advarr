@@ -33,6 +33,17 @@ forEach(people, ({ value: person, first, last }) => {
 # speed
 A manual `for (let i = 0; i < arr.length; i++)` will likely always be the fastest way to iterate over values. If speed is the most important priority, I recommend using a for loop.  That said, I have written this library to be as fast as possible while providing an intuitive and large set of callback arguments.  Several of the callback values like `length` and `percent` are actually getters and only calculated if you use them.
 
+# functions
+Here's a complete list of functions
+- every
+- filter
+- find
+- findIndex
+- flatMap
+- forEach
+- map
+- some
+
 # parameters
 Here's a complete list of parameters passed into the callback function
 | name  | description |

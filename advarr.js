@@ -3,7 +3,13 @@ const iter = ({ inpt, func, cb, thisArg }) => {
     return inpt[func]((value, i, array) => {
       return cb({
         value,
+        currentValue: value,
+        element: value,
+        item: value,
+
         i,
+        index: i,
+
         array,
 
         get percent() { return (i + 1) / array.length; },
@@ -11,6 +17,8 @@ const iter = ({ inpt, func, cb, thisArg }) => {
         get length() { return array.length; },
 
         get previous() { return array[i - 1]; },
+        get prev() { return array[i - 1]; },
+
         get next() { return array[i + 1]; },
 
         get before() { return array.slice(0, i); },
@@ -50,10 +58,10 @@ const iter = ({ inpt, func, cb, thisArg }) => {
   }
 };
 
-const advarr = {
-  forEach: (inpt, cb, thisArg) => iter({ inpt, func: "forEach", cb, thisArg }),
-  map: (inpt, cb, thisArg) => iter({ inpt, func: "map", cb, thisArg })
-};
+const advarr = {};
+["every", "filter", "find", "findIndex", "flatMap", "forEach", "map", "some"].forEach(key => {
+  advarr[key] = (inpt, cb, thisArg) => iter({ inpt, func: key, cb, thisArg });
+});
 
 if (typeof module.exports === "object") module.exports = advarr;
 if (typeof window === "object") window.advarr = advarr;
