@@ -5,7 +5,7 @@
 - intuitive
 - light weight
 - lots of parameters
-- break multiple loops at once
+- break out of multiple loops at once
 
 # background
 I write a lot of NodeJS scripts for processing and transforming data.  They need to run fast, but the most important thing to me is that the code is readable.  I found myself repeating a lot of logic when using Array's forEach and map, like checking if an element is the first in the array and figuring out what percentage of the forEach loop is complete.  Instead of repeating myself (and in order to simplify my scripts), I wrote this library.  I hope you find it useful, too.
@@ -69,3 +69,5 @@ forEach(nums, ({ value: v1 }) => {
   });
 });
 ```
+
+# more examples coming soon!
