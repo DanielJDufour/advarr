@@ -4,11 +4,11 @@
 # features
 - intuitive
 - light weight
-- lots of paramets
+- lots of parameters
 - break multiple loops at once
 
 # background
-I write a lot of NodeJS scripts for processing and transforming data.  They need to run fast, but the most important thing to me is that the code is readable.  I found myself repeating a lot of logic with array for loops, like checking if an element is the first in the array and figuring out what percentage of the forEach loop is complete.  Instead of repeating myself (and in order to simplify my scripts), I wrote this library.  I hope you find it useful, too.
+I write a lot of NodeJS scripts for processing and transforming data.  They need to run fast, but the most important thing to me is that the code is readable.  I found myself repeating a lot of logic when using Array's forEach and map, like checking if an element is the first in the array and figuring out what percentage of the forEach loop is complete.  Instead of repeating myself (and in order to simplify my scripts), I wrote this library.  I hope you find it useful, too.
 
 # install
 ```bash
@@ -16,10 +16,8 @@ npm install advarr
 ```
 
 # usage
-## forEach
-### constructing a natural language list
 ```javascript
-const { forEach, map } = require("advarr");
+const { forEach } = require("advarr");
 
 const people = ["Peter", "Paul", "Mary"];
 let text = "";
@@ -33,7 +31,7 @@ forEach(people, ({ value: person, first, last }) => {
 ```
 
 # speed
-- A manual `for (let i = 0; i < arr.length; i++)` will likely always be fastest way to iterate over values. If speed is the most important priority, I recommend using a for loop.  That said, I have written this library to be as fast as possible while providing an intuitive and large set of callback arguments.  Several of the callback values like `length` and `percent` are actually getters and only calculated if you use them.
+A manual `for (let i = 0; i < arr.length; i++)` will likely always be the fastest way to iterate over values. If speed is the most important priority, I recommend using a for loop.  That said, I have written this library to be as fast as possible while providing an intuitive and large set of callback arguments.  Several of the callback values like `length` and `percent` are actually getters and only calculated if you use them.
 
 # parameters
 Here's a complete list of parameters passed into the callback function
@@ -54,4 +52,20 @@ Here's a complete list of parameters passed into the callback function
 | penultimate | second to last element in the array |
 | antepenultimate | third to last element in the array |
 | odd | odd number element |
-| event | even number element |
+| even | even number element |
+
+# more examples
+### breaking out of multiple loops
+```js
+const { forEach } = require("advarr");
+
+const nums = [0, 1, 2, 3, 4];
+forEach(nums, ({ value: v1 }) => {
+  forEach(nums, ({ value: v2 }) => {
+    forEach(nums, ({ value: v3, brk }) => {
+      // break out of the two inner loops (but not the top most one)
+      if (Math.random() < 0.5) brk(2);
+    });  
+  });
+});
+```
