@@ -6,6 +6,7 @@ const iter = ({ inpt, func, cb, thisArg }) => {
         currentValue: value,
         element: value,
         item: value,
+        it: value,
 
         i,
         index: i,
