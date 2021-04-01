@@ -48,7 +48,7 @@ Here's a complete list of functions
 Here's a complete list of parameters passed into the callback function
 | name  | description |
 | ----- | ----------- |
-| value | current element in the array and same as [currentValue](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) |
+| value | current element in the array and same as [currentValue](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map). You can also use `it`, `item`, `element`, or `currentValue`. |
 | i     | index of current element in the array and same as [index](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) |
 | array | the original array and same as [array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) |
 | percent | percentage of the array processed including current element |
