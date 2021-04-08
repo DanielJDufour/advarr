@@ -68,3 +68,14 @@ test("double brk", ({ eq }) => {
   });
   eq(text, '0,0,0\n1,0,0\n1,0,1\n1,1,0\n1,1,1\n');  
 });
+
+test("editing in the loop", ({ eq }) => {
+  const nums = [0, 1, 2];
+  const prevs = [];
+  forEach(nums, ({ array, prev, i }) => {
+    prevs.push(prev);
+    array[i] = -1;
+  });
+  eq(prevs, [undefined, 0, 1]);
+  eq(nums, [-1, -1, -1]);
+});

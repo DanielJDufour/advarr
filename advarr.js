@@ -1,5 +1,10 @@
 const iter = ({ inpt, func, cb, thisArg }) => {
   try {
+    const length = inpt.length;
+
+    // shallow-copy origin array
+    const originalArray = Array.from(inpt);
+
     return inpt[func]((value, i, array) => {
       return cb({
         value,
@@ -13,17 +18,17 @@ const iter = ({ inpt, func, cb, thisArg }) => {
 
         array,
 
-        get percent() { return (i + 1) / array.length; },
+        get percent() { return (i + 1) / length; },
 
-        get length() { return array.length; },
+        get length() { return length; },
 
-        get previous() { return array[i - 1]; },
-        get prev() { return array[i - 1]; },
+        get previous() { return originalArray[i - 1]; },
+        get prev() { return originalArray[i - 1]; },
 
-        get next() { return array[i + 1]; },
+        get next() { return originalArray[i + 1]; },
 
-        get before() { return array.slice(0, i); },
-        get after() { return array.slice(i + 1); },
+        get before() { return originalArray.slice(0, i); },
+        get after() { return originalArray.slice(i + 1); },
 
         brk: (n=1) => { throw `[advarr] breaking ${n}`; },
 
@@ -39,9 +44,9 @@ const iter = ({ inpt, func, cb, thisArg }) => {
         ninth: i === 8,
         tenth: i === 9,
 
-        last: i === array.length - 1,
-        penultimate: i === array.length - 2,
-        antepenultimate: i === array.length - 3,
+        last: i === length - 1,
+        penultimate: i === length - 2,
+        antepenultimate: i === length - 3,
 
         odd: i % 2 === 1,
         even: i % 2 === 0,
