@@ -5,6 +5,9 @@ const iter = ({ inpt, func, cb, thisArg }) => {
     // shallow-copy origin array
     const originalArray = Array.from(inpt);
 
+    const firstValue = originalArray[0];
+    const lastValue = originalArray[length - 1];
+
     return inpt[func]((value, i, array) => {
       return cb({
         value,
@@ -12,6 +15,16 @@ const iter = ({ inpt, func, cb, thisArg }) => {
         element: value,
         item: value,
         it: value,
+
+        firstValue,
+        firstElement: firstValue,
+        firstItem: firstValue,
+        firstIt: firstValue,
+
+        lastValue,
+        lastElement: lastValue,
+        lastItem: lastValue,
+        lastIt: lastValue,
 
         i,
         index: i,

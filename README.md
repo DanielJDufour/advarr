@@ -49,7 +49,7 @@ Here's a complete list of parameters passed into the callback function
 | name  | description |
 | ----- | ----------- |
 | value | current element in the array and same as [currentValue](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map). You can also use `it`, `item`, `element`, or `currentValue`. |
-| i     | index of current element in the array and same as [index](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) |
+| i     | index of current element in the array and same as [index](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map). You can also use `index`. |
 | array | the original array and same as [array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) |
 | percent | percentage of the array processed including current element |
 | length | length of the array |
@@ -62,8 +62,10 @@ Here's a complete list of parameters passed into the callback function
 | last | last element in the array |
 | penultimate | second to last element in the array |
 | antepenultimate | third to last element in the array |
-| odd | odd number element |
-| even | even number element |
+| odd | index is odd (starting with the second element in the array because the second element has an index of 1) |
+| even | even number element (starting with the first element in the array because the first element has an index of 0) |
+| firstValue | the first value of the array.  You can also use `firstElement`, `firstItem`, or `firstIt`. |
+| lastValue | the last value of the array  You can also use `lastElement`, `lastItem`, or `lastIt`.  |
 
 # more examples
 ### breaking out of multiple loops
