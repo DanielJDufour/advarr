@@ -79,3 +79,12 @@ test("editing in the loop", ({ eq }) => {
   eq(prevs, [undefined, 0, 1]);
   eq(nums, [-1, -1, -1]);
 });
+
+test("item name variations", ({ eq }) => {
+  const nums = [999];
+  const values = [];
+  forEach(nums, ({ item, it, currentValue, value, element }) => {
+    values.push(item, it, currentValue, value, element);
+  });
+  eq(values.every(v => values[0] === v), true);
+});
